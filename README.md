@@ -4,6 +4,8 @@
 
 > _Why write something again when it's already written ?_
 
+![Phlex Banner](banner.jpg)
+
 # How to use !
 
 - Add dependency in your module's `build.gradle` file
