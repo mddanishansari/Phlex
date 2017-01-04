@@ -6,7 +6,14 @@
 
 # How to use !
 
-- Download the [jar file](https://raw.githubusercontent.com/mddanishansari/Phlex/master/phlex-0.0.1.jar) and put it in `libs` folder of your module.
+- Add dependency in your module's `build.gradle` file
+```
+dependencies {
+		// ... other dependencies here
+	    compile 'com.md.phlex:phlex:0.0.1'
+	}
+```
+
 - Sync your project with gradle file.
 - Start using methods. Like `Phlex.isFirstRun(this)`
 
