@@ -1,0 +1,112 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 25
+        versionCode 2
+        versionName "0.0.2"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+group = 'com.md.phlex'
+version = '0.0.2'
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name 'Phlex'
+            description 'A collection of small utilities required by android developers in daily life.'
+            url 'https://github.com/mddanishansari/Phlex'
+            inceptionYear '2017'
+
+            packaging 'aar'
+            groupId 'com.md.phlex'
+            artifactId 'phlex'
+            version '0.0.2'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+            scm {
+                connection 'https://github.com/mddanishansari/Phlex.git'
+                url 'https://github.com/mddanishansari/Phlex'
+
+            }
+            developers {
+                developer {
+                    id = 'mddanishansaridev'
+                    name 'MD Danish Ansari'
+                }
+            }
+        }
+    }
+}
+
+Properties bintrayProperties = new Properties()
+bintrayProperties.load(project.rootProject.file('bintray.properties').newDataInputStream())
+
+bintray {
+    user = bintrayProperties.getProperty('user')
+    key = bintrayProperties.get('key')
+    configurations = ['archives']
+    pkg {
+        repo = 'md_repository'
+        name = 'phlex'
+        userOrg = 'mddanishansariorg'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/mddanishansari/Phlex.git'
+        publish = true
+        version {
+            name = '0.0.2'
+            desc = 'A collection of small utilities required by android developers in daily life.'
+            released = new Date()
+            vcsTag = 'v0.0.2'
+        }
+    }
+}
