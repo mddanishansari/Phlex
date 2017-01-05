@@ -12,7 +12,7 @@
 ```
 dependencies {
 		// ... other dependencies here
-	    compile 'com.md.phlex:phlex:0.0.1'
+	    compile 'com.md.phlex:phlex:0.0.2'
 	}
 ```
 
@@ -20,7 +20,7 @@ dependencies {
 - Start using methods. Like `Phlex.isFirstRun(this)`
 
 # Currently available methods
-
+	
 -	`isFirstRun(SharedPreferences sharedPreferences)`
 	*	Returns `true` or `false`
 	
@@ -65,6 +65,24 @@ dependencies {
 	*	Else unhides `toolbarShadow` view
 	*	_Tip: Very useful for backward compatibility_
 	
+-	`isPreLollipop()`
+	*	Returns `true` if device is pre-lollipop
+	*	_Tip: Useful for backward compatibility_
+	
+-	`isLollipopPlusp()`
+	*	Returns `true` if device is lollipop or lollipop plus
+	*	_Tip: Useful for backward compatibility_	
+
+-	`dp2px(int dp)`
+	*	Returns `px` value of the provided `dp`
+	*	You can also use `float`
+
+-	`px2dp(int px)`
+	*	Returns `dp` value of the provided `px`
+	*	You can also use `float`
+	
+-	`isAppInstalled(Context context, String appPackageName)`
+	*	Returns `true` or `false`	
 	
 > _Note: I know this is too less but more methods will be available soon. You can send your ideas or contributions to me at mddanishansaridev@gmail.com_
 
