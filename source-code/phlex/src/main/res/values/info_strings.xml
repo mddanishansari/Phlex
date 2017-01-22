@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="define_Phlex"></string>
+    <string name="library_Phlex_author">MD Danish Ansari</string>
+    <string name="library_Phlex_authorWebsite">https://github.com/mddanishansari/Phlex</string>
+    <string name="library_Phlex_libraryName">Phlex</string>
+    <string name="library_Phlex_libraryDescription">A collection of small utilities required by android developers in daily life</string>
+    <string name="library_Phlex_libraryVersion">0.0.2</string>
+    <string name="library_Phlex_libraryWebsite">https://github.com/mddanishansari/Phlex</string>
+    <string name="library_Phlex_licenseId">apache_2_0</string>
+    <string name="library_Phlex_isOpenSource">true</string>
+    <string name="library_Phlex_repositoryLink">https://github.com/mddanishansari/Phlex/</string>
+</resources>
