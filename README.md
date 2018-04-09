@@ -12,7 +12,7 @@
 ```
 dependencies {
 		// ... other dependencies here
-	    compile 'com.md.phlex:phlex:0.0.2'
+	    	compile 'com.md.phlex:phlex:0.0.2'
 	}
 ```
 
