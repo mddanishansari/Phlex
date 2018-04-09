@@ -41,7 +41,7 @@ dependencies {
 -	`isAppVersionUpdated(Context context, SharedPreferences sharedPreferences)`
 	*	Same as above method it just uses SharedPreferences file provided by user
 	
--	`getScreenWidth()` or `getScreenWidth()`
+-	`getScreenWidth()` or `getScreenHeight()`
 	*	Returns integer value
 	
 -	`getXPercentOfY(int X, int Y)`
@@ -69,7 +69,7 @@ dependencies {
 	*	Returns `true` if device is pre-lollipop
 	*	_Tip: Useful for backward compatibility_
 	
--	`isLollipopPlusp()`
+-	`isLollipopPlus()`
 	*	Returns `true` if device is lollipop or lollipop plus
 	*	_Tip: Useful for backward compatibility_	
 
