@@ -1,5 +1,7 @@
 # Phlex
 
+# THIS LIBRARY IS NOT MAINTAINED ANYMORE
+
 > I am making a collection of small utilities required by most of the android developers in daily life like `isFirstRun()`, `isDataAvailable()`, `getScreenHeight()` and many more.
 
 > _Why write something again when it's already written ?_
